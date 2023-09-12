@@ -1,0 +1,12 @@
+session_name: 'go-apptest'
+windows:
+- focus: 'true'
+  layout: 2db1,174x43,0,0[174x3,0,0,0,174x4,0,4,4,174x34,0,9{57x34,0,9,7,116x34,58,9,8}]
+  options: {}
+  panes:
+  - "reflex -r '\\.go$' -s -- make -j8"
+  - sudo caddy run
+  - $EDITOR Caddyfile
+  - lf 
+  start_directory: /home/rithviz/Projects/golang/go-apptest
+  window_name: fish
