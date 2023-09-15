@@ -1,4 +1,5 @@
 *.wasm
 *.out
 *.exe
+*.upx
 web/
