@@ -1,4 +1,4 @@
 *.wasm
 *.out
 *.exe
-
+web/
