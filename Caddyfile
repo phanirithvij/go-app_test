@@ -1,14 +1,14 @@
 localhost:80 {
 	root * .
-	encode gzip zstd
+	encode zstd gzip
 	file_server {
 		browse
-		precompressed br
+		# if go-app server hosts it for us then brotli wasm compression
+		# will not work as precompressed works only with file_server
+		# and on-the-fly br compression is not performant as per caddy authors
+		precompressed br zstd gzip
 	}
 }
 #TODO
 # reverse_proxy the server
 # host the assets (? maybe server does it for us)
-# if server hosts it for us then brotli wasm compression will not work as
-# precompressed works only with file_server
-# and on the fly compression is not performant code as per caddy authors
